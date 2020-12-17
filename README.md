@@ -15,3 +15,8 @@ Saved folder contain the scorelist of all 4 version. Confusion matrix folder con
 
 Savejpg.py transforms the orignial to copped version.
 confusion.py draws the confusion matrxi for the specified scorelist file.
+
+Contributers:
+    Mehryar Abbasi
+    Saba Akhyani
+    Nima Abdollahpour
