@@ -1,5 +1,6 @@
 # conf
 This project creates and trains a model on the confused/not confused dataset.
+The original dataset waS AROUN 30GIGS SO I only included the cropped version links here.
 To run the code:
 1) download the dataset from :https://drive.google.com/file/d/1b0FqoLd0FFLeknhS_LvCQw85Wgkg3OtW/view?usp=sharing.
 2) change the 'root_dir' in line 80 for the datpp3 function to the location of downloaded files(example can be seen in train_2.py).
@@ -11,3 +12,6 @@ To run the code:
 this algorithm saves 3 files per run. the loss and accuracy progression are saved in log. scorlist contains the outputs of test dataset of best model. the pth file is the best model.
 
 Saved folder contain the scorelist of all 4 version. Confusion matrix folder contatins the condusion matrix. The .xlsx file contatins all of the four runs accuracy loss progession for train test validation and the figures.
+
+Savejpg.py transforms the orignial to copped version.
+confusion.py draws the confusion matrxi for the specified scorelist file.
