@@ -13,11 +13,8 @@ class incLstm(nn.Module):
         if hids == n_cl:
             bidi = 0
         if not mode:
-
             self.features = InceptionResnetV1(pretrained='vggface2').eval()
         else:
-            # features = InceptionResnetV1(classify=True, num_classes=2)
-
             self.features = InceptionResnetV1()
         self.mode=mode
         self.RNN = nn.LSTM(input_size=512, hidden_size=hids,
@@ -40,7 +37,6 @@ class incLstm(nn.Module):
         images = images.contiguous().view(-1, BS[2], BS[3], BS[4])
         if self.mode:
             x = self.features(images)
-            x = F.normalize(x,p=2,dim=1)
         else:
             with torch.no_grad():
                 x = self.features(images)

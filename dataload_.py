@@ -92,8 +92,12 @@ def datPP3(root_dir='/scratch/mabbasib/grab_cropped/', iv=1,it=2):
         emotion = folder.split('_')[11]
         target=int(class_path.split(os.path.sep)[-3])
         # if emotion!='HeadLeftnBrowLower':
-        if emotion!='HeadLeftnBrowLower':
-            listp[foldkey[model]].append([class_path,target,ya,za,foldkey[model],foldkey2[emotion],paths])
+        if emotion!='HeadLeftnBrowLower' and emotion!='angerdefault01'and emotion!='angerdefault02':
+            if target==0:
+                if folder.split('_')[12]!='combination22'and  folder.split('_')[12]!='combination122':
+                    listp[foldkey[model]].append([class_path, target, ya, za, foldkey[model], foldkey2[emotion], paths])
+            else:
+                listp[foldkey[model]].append([class_path,target,ya,za,foldkey[model],foldkey2[emotion],paths])
     ratio = [0.64, 0.18, 0.18]
     ld = len(listp)
     lengths = [int(ld * ratio[0]), int(ld * ratio[1]), int(ld * ratio[2])]

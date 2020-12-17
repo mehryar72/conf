@@ -1,6 +1,6 @@
 
 import numpy as np
-from dataload import *
+from dataload_ import *
 import argparse
 # from utility import *
 from models import *
@@ -49,7 +49,7 @@ for handler in logging.root.handlers[:]:
     logging.root.removeHandler(handler)
 logging.shutdown()
 
-name = '/scratch/mabbasib/MLLOG/log' + (''.join(sys.argv[1:]))
+name = '/scratch/mabbasib/MLLOG/log_' + (''.join(sys.argv[1:]))
 if args.cont:
     logF = name+'con' + '.csv'
     netS2 = name + '.pth'

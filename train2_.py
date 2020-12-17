@@ -1,6 +1,6 @@
 
 import numpy as np
-from dataload import *
+from dataload_ import *
 import argparse
 # from utility import *
 from models import *
@@ -49,7 +49,7 @@ for handler in logging.root.handlers[:]:
     logging.root.removeHandler(handler)
 logging.shutdown()
 
-name = '/scratch/mabbasib/MLLOG/log' + (''.join(sys.argv[1:]))
+name = '/scratch/mabbasib/MLLOG/log2_' + (''.join(sys.argv[1:]))
 if args.cont:
     logF = name+'con' + '.csv'
     netS2 = name + '.pth'
@@ -104,7 +104,7 @@ if __name__ == '__main__':
         transforms.ToTensor(),
         transforms.Normalize([0.5], [0.5]),
     ])
-    D_T, D_V, D_Te = datPP3()
+    D_T, D_V, D_Te = datPP3(root_dir='./grab_cropped/')
     DT_loader = MakeH2(D_T,transform=transform)
     DV_loader = MakeH2(D_V,transform=transformV)
     DTe_loader = MakeH2(D_Te,transform=transformV)
